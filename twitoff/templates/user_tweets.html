@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recent tweets From {{ name }}</title>
+    <!-- This is a comment in html-->
+  </head>
+
+  <body>
+    <h1>Recent Tweets From {{ name }}</h1>
+    <ul>
+      {% for tweet in tweets %}
+      <li>{{ tweet.text }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
