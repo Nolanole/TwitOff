@@ -19,6 +19,12 @@ def create_app():
     comparisons = Comparison.query.all()
     return render_template('base.html', title='Home', users=users, comparisons=comparisons)
 
+  @app.route('/reset')
+  def reset():
+    DB.drop_all()
+    DB.create_all()
+    return render_template('base.html', title='DB Reset', users=[])
+
   @app.route('/update')
   def update():
     if config('ENV') == 'production':
