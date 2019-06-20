@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{ title }}</h2>
+<p>{{ tweet }}</p>
+<h3>Prediction: {{ predicted_user }}</h3>
+<p>Tweet % probabilities</p>
+<p>{{ user1_name }} : {{ user1_prob }}, {{ user2_name }} : {{ user2_prob }}</p>
+{% endblock %}
