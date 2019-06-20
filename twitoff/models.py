@@ -37,5 +37,5 @@ class Comparison(DB.Model):
 
   def __repr__(self):
     return 'Tweet: {} | Between {}:({}) & {}:({}), the Predicted Tweeter is: {}'.format(
-          self.text, self.user1_name, str(round(self.user1_prob,2))+'%', self.user2_name, 
-          str(round(self.user2_prob,2))+'%', self.predicted_user)
+          self.text, self.user1_name, str(round(self.user1_prob*100,2))+'%', self.user2_name, 
+          str(round(self.user2_prob*100,2))+'%', self.predicted_user)
