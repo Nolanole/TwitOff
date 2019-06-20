@@ -7,7 +7,7 @@ from .twitter import BASILICA
 
 def predict_user(user1_name, user2_name, tweet_text, cache=None):
   '''Determine and return which user is more likely to say a given tweet'''
-  user_set = pickle.dumps((user1_name, user2_name)) #users are sorted
+  #user_set = pickle.dumps((user1_name, user2_name)) #users are sorted
   if cache and cache.exists(user_set):
     log_reg = pickle.loads(cache.get(user_set))
   else:

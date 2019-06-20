@@ -36,4 +36,6 @@ class Comparison(DB.Model):
   user2_prob = DB.Column(DB.Float, nullable=False)
 
   def __repr__(self):
-    return 'Tweet: {} | Between {} & {}, the Predicted Tweeter is: {}'.format(self.text, self.user1_name, self.user2_name, self.predicted_user)
+    return 'Tweet: {} | Between {}:({}) & {}:({}), the Predicted Tweeter is: {}'.format(
+          self.text, self.user1_name, self.user1_prob, self.user2_name, 
+          self.user2_prob, self.predicted_user)

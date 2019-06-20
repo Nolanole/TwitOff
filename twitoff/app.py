@@ -30,10 +30,11 @@ def create_app():
     '''if config('ENV') == 'production':
       CACHE.flushall()
       CACHED_COMPARISONS.clear()'''
-    users = User.query.all()  
+    users = User.query.all()
+    comparisons = Comparison.query.all()  
     update_all_users(users)
-    return render_template('base.html', users=User.query.all(), 
-                           title='Cache cleared and all tweets updated!')  
+    return render_template('base.html', users=users, comparisons=comparisons, 
+                           title='All tweets updated!')  
   
   @app.route('/user', methods=['POST'])
   @app.route('/user/<name>', methods=['GET'])
