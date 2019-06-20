@@ -27,9 +27,9 @@ def create_app():
 
   @app.route('/update')
   def update():
-    if config('ENV') == 'production':
+    '''if config('ENV') == 'production':
       CACHE.flushall()
-      CACHED_COMPARISONS.clear()
+      CACHED_COMPARISONS.clear()'''
     users = User.query.all()  
     update_all_users(users)
     return render_template('base.html', users=User.query.all(), 
